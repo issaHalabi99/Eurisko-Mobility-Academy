@@ -1,0 +1,15 @@
+.slider img {
+    width: 200px;
+    height: 200px;
+}
+
+.slider:hover {
+   cursor: grab;
+}
+
+.title {
+    color: black;
+    font-size: xx-large;
+    font-weight: 3rem;
+    padding-top: 100px  ;
+}

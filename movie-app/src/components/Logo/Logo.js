@@ -1,6 +1,6 @@
 import React from "react";
 
-import movieLogo from "../../assets/images/video-camera.png";
+import movieLogo from "../../assets/images/deadpool.png";
 
 const Logo = (props) => (
   <React.Fragment>

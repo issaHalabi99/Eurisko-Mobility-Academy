@@ -6,7 +6,7 @@ import NavigationItems from "../NavigationItems/NavigationItems";
 
 const toolbar = (props) => (
   <header>
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <a className="navbar-brand" href="/">
         <Logo height= "3.5rem" />
       </a>

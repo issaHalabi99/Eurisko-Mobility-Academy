@@ -1,5 +1,5 @@
 import React from "react";
-import "./Categories.css";
+import classes from  "./Categories.module.css";
 
 // import Swiper core and required components
 import SwiperCore, { Navigation, Pagination, A11y } from "swiper";
@@ -18,6 +18,7 @@ SwiperCore.use([Navigation, Pagination, A11y]);
 const Categories = (props) => {
   return (
     <React.Fragment>
+       <span className={classes.title}>{props.films.type.toUpperCase()}</span>
       <Swiper
         loop={true}
         spaceBetween={window.matchMedia("(min-width: 600px)").matches ? 90 : 0}
@@ -26,18 +27,18 @@ const Categories = (props) => {
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}
       >
-        {props.actions.map((item, index) => {
+        {props.films.data.map((item, index) => {
           return (
-            <SwiperSlide className="slider" key={item.id}>
+            <SwiperSlide className={classes.slider} key={item.id}>
               <img
-                onClick={() => props.click(index)}
+                onClick={() => props.click(props.films.type,index)}
                 src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
                 alt={item.original_name}
               />
             </SwiperSlide>
           );
         })}
-        <span slot="container-start">Actions</span>
+       
       </Swiper>
     </React.Fragment>
   );

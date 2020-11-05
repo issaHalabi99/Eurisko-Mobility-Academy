@@ -1,5 +1,9 @@
+.title {
+    color: blanchedalmond;
+}
+
 @media (max-width : 991px) {
-    span {
+    .title {
         display: none;
     }
 }
