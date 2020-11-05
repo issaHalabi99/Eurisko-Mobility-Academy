@@ -17,7 +17,9 @@ const Modal = (props) => {
           opacity: props.show ? "1" : "0",
         }}
       >
+        <div className={classes.child}>
         {props.children}
+        </div>
       </div>
     </React.Fragment>
   );
