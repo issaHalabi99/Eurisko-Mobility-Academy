@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import React from "react";
-import Backdrop from '../Backdrop/Backdrop';
+import Backdrop from "../Backdrop/Backdrop";
 import classes from "./Modal.module.css";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 
 

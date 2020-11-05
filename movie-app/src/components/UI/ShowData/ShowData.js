@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 
 const ShowData = (props) => {
@@ -20,7 +20,7 @@ const ShowData = (props) => {
                 : overview}
             </p>
           </div>
-          <div className={`col-auto d-none d-md-block `}>
+          <div className={"col-auto d-none d-md-block "}>
             <img
               style={{ width: "100%", height: "100%" }}
               src={`https://image.tmdb.org/t/p/w500/${props.data.backdrop_path}`}
