@@ -4,8 +4,8 @@ import Logo from "../../Logo/Logo";
 import Title from "../../Title/Title";
 import NavigationItems from "../NavigationItems/NavigationItems";
 
-const toolbar = (props) => (
-  <header>
+const toolbar = () => (
+  <header className="sticky-top">
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <a className="navbar-brand" href="/">
         <Logo height= "3.5rem" />

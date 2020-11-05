@@ -1,6 +1,6 @@
 import React from "react";
 import classes from  "./Categories.module.css";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 // import Swiper core and required components
 import SwiperCore, { Navigation, Pagination, A11y } from "swiper";
@@ -22,7 +22,7 @@ const Categories = (props) => {
        <span className={classes.title}>{props.films.type.toUpperCase()}</span>
       <Swiper
         loop={true}
-        spaceBetween={window.matchMedia("(min-width: 600px)").matches ? 90 : 0}
+        spaceBetween={window.matchMedia("(min-width: 600px)").matches ? 90 : 30}
         slidesPerView={window.matchMedia("(min-width: 600px)").matches ? 5 : 2}
         navigation
       >
@@ -45,6 +45,7 @@ const Categories = (props) => {
 
 Categories.propTypes = {
   films: PropTypes.object,
+  click: PropTypes.func
   
 };
 

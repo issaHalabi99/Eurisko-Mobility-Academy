@@ -5,10 +5,10 @@ import Films from "../../components/Films/Films";
 import Modal from "../../components/UI/Modal/Modal";
 import ShowData from "../../components/UI/ShowData/ShowData";
 
-import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler'
+import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
 import axios from "../../axios-instance/axios-films";
 
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const MainComponent = (props) => {
   useEffect(() => {
@@ -75,6 +75,10 @@ MainComponent.propTypes = {
   comedy: PropTypes.object,
   crime: PropTypes.object,
   current: PropTypes.object,
+  addFilms: PropTypes.func,
+  onShowFilm: PropTypes.func,
+  onDisableFilm: PropTypes.func,
+
 
 };
 

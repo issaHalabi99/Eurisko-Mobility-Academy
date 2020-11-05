@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import React, { useState, useEffect } from "react";
 
 import Modal from "../../components/UI/Modal/Modal";
@@ -14,7 +15,7 @@ const withErrorHandler = (WrappedComponent, axios) => {
 
       let resInterceptor = axios.interceptors.response.use(
         (res) => res,
-        (error) => {
+        () => {
           setErrorValue(true);
         }
       );

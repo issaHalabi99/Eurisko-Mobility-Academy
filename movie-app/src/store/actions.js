@@ -39,7 +39,7 @@ export const add_Films = () => {
         dispatch(addCrimeFilms([...res[2].data.results]));
       })
       .catch((err) => {
-        console.log(err)
+        console.log(err);
       });
   };
 };

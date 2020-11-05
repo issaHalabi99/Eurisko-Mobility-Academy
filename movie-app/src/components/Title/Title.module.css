@@ -1,5 +1,9 @@
 .title {
-    color: rgb(218, 206, 189);
+    color: palegoldenrod;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 2em;
+    animation: moving 2s ease-out;
 }
 
 @media (max-width : 991px) {
@@ -7,3 +11,4 @@
         display: none;
     }
 }
+

@@ -1,11 +1,14 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const Footer = (props) => (
   <React.Fragment>
     <footer className="page-footer font-small blue">
-      <div className="footer-copyright text-center py-3">
-        © 2020 Copyright:
+      <div
+        style={{ color: "white" }}
+        className="footer-copyright text-center py-3"
+      >
+        © 2020 Copyright
         <a href="/"> {props.sentence}</a>
       </div>
     </footer>
@@ -13,7 +16,7 @@ const Footer = (props) => (
 );
 
 Footer.propTypes = {
-  sentence: PropTypes.string
+  sentence: PropTypes.string,
 };
 
 export default Footer;

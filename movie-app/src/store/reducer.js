@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 import * as actionTypes from "./actions";
 
 const initialState = {
@@ -45,7 +46,7 @@ const reducer = (state = initialState, action) => {
       };
 
     case actionTypes.SHOW_FILMS:
-      let type = state[action.filmType]
+      let type = state[action.filmType];
       const currentFilm = {
         ...type.data[action.filmIndex],
         type: action.filmType
