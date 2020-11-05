@@ -8,6 +8,8 @@ import ShowData from "../../components/UI/ShowData/ShowData";
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler'
 import axios from "../../axios-instance/axios-films";
 
+import PropTypes from 'prop-types';
+
 const MainComponent = (props) => {
   useEffect(() => {
     if (
@@ -66,6 +68,16 @@ const mapDispatchToProps = (dispatch) => {
     onDisableFilm: () => dispatch({ type: actionTypes.DISABLE_FILMS }),
   };
 };
+
+MainComponent.propTypes = {
+  show: PropTypes.bool,
+  actions: PropTypes.object,
+  comedy: PropTypes.object,
+  crime: PropTypes.object,
+  current: PropTypes.object,
+
+};
+
 
 export default withErrorHandler(
   connect(mapStateToProps, mapDispatchToProps)(MainComponent),

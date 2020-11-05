@@ -1,5 +1,6 @@
 import React from "react";
 import Categories from "./Categories/Categories";
+import PropTypes from 'prop-types';
 
 const Films = (props) => (
   <React.Fragment>
@@ -14,5 +15,11 @@ const Films = (props) => (
     </div>
   </React.Fragment>
 );
+
+Films.propTypes = {
+  actions: PropTypes.object,
+  comedy: PropTypes.object,
+  crime: PropTypes.object,
+};
 
 export default Films;

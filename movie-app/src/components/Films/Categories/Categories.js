@@ -1,5 +1,6 @@
 import React from "react";
 import classes from  "./Categories.module.css";
+import PropTypes from 'prop-types';
 
 // import Swiper core and required components
 import SwiperCore, { Navigation, Pagination, A11y } from "swiper";
@@ -40,6 +41,11 @@ const Categories = (props) => {
       </Swiper>
     </React.Fragment>
   );
+};
+
+Categories.propTypes = {
+  films: PropTypes.object,
+  
 };
 
 export default Categories;

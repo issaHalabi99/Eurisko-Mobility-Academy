@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 const Footer = (props) => (
   <React.Fragment>
@@ -10,5 +11,9 @@ const Footer = (props) => (
     </footer>
   </React.Fragment>
 );
+
+Footer.propTypes = {
+  sentence: PropTypes.string
+};
 
 export default Footer;
