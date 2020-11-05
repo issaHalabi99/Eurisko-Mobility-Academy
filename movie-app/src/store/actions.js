@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import axios from "../axios-instance/axios-films";
 
 export const ADD_FILMS_ACTIONS = "ADD_FILMS_ACTIONS";
@@ -29,9 +30,9 @@ export const addCrimeFilms = (data) => {
 export const add_Films = () => {
   return (dispatch) => {
     Promise.all([
-      axios.get("/tv?api_key=224ce27b38a3805ecf6f6c36eb3ba9d0&with_genres=28"),
-      axios.get("/tv?api_key=224ce27b38a3805ecf6f6c36eb3ba9d0&with_genres=35"),
-      axios.get("/tv?api_key=224ce27b38a3805ecf6f6c36eb3ba9d0&with_genres=80"),
+      axios.get(`/tv?api_key=${process.env.REACT_APP_THE_MOVIE_DATABASE_API_KEY_ACTIONS}`),
+      axios.get(`/tv?api_key=${process.env.REACT_APP_THE_MOVIE_DATABASE_API_KEY_COMEDY}`),
+      axios.get(`/tv?api_key=${process.env.REACT_APP_THE_MOVIE_DATABASE_API_KEY_CRIME}`)
     ])
       .then((res) => {
         dispatch(addActionFilms([...res[0].data.results]));
