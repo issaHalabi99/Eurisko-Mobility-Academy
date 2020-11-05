@@ -5,9 +5,10 @@ import Films from "../../components/Films/Films";
 import Modal from "../../components/UI/Modal/Modal";
 import ShowData from "../../components/UI/ShowData/ShowData";
 
-const MainComponent = (props) => {
-  //const inputState = useState([]);
+import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler'
+import axios from "../../axios-instance/axios-films";
 
+const MainComponent = (props) => {
   useEffect(() => {
     if (
       props.actions.data.length === 0 &&
@@ -17,8 +18,8 @@ const MainComponent = (props) => {
       props.addFilms();
   }, [props]);
 
-  const click = (type,index) => {
-    props.onShowFilm(type,index);
+  const click = (type, index) => {
+    props.onShowFilm(type, index);
   };
 
   const CancelHandler = () => {
@@ -27,7 +28,7 @@ const MainComponent = (props) => {
 
   const modalShow = props.current ? (
     <Modal show={props.show} modalClosed={CancelHandler}>
-      <ShowData data={props.current}  />
+      <ShowData data={props.current} />
     </Modal>
   ) : null;
   return (
@@ -57,9 +58,16 @@ const mapDispatchToProps = (dispatch) => {
   return {
     addFilms: () => dispatch(actionTypes.add_Films()),
     onShowFilm: (filmType, index) =>
-      dispatch({ type: actionTypes.SHOW_FILMS, filmIndex: index, filmType: filmType }),
+      dispatch({
+        type: actionTypes.SHOW_FILMS,
+        filmIndex: index,
+        filmType: filmType,
+      }),
     onDisableFilm: () => dispatch({ type: actionTypes.DISABLE_FILMS }),
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(MainComponent);
+export default withErrorHandler(
+  connect(mapStateToProps, mapDispatchToProps)(MainComponent),
+  axios
+);

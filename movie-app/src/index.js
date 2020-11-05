@@ -7,30 +7,25 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import reducer from "./store/reducer";
-import thunk from 'redux-thunk';
+import thunk from "redux-thunk";
 
-
-
-const looger = store => {
-  return next => {
-    return action => {
-      console.log('[Middleware] Dispatching', action);
+const looger = (store) => {
+  return (next) => {
+    return (action) => {
+      //console.log("[Middleware] Dispatching", action);
       const result = next(action);
-      console.log('[Middleware] next state', store.getState());
+      //console.log("[Middleware] next state", store.getState());
       return result;
-    }
-  }
+    };
+  };
 };
-
 
 const store = createStore(reducer, applyMiddleware(looger, thunk));
 
-
-
 ReactDOM.render(
-    <Provider store={store}>
-      <App />
-    </Provider>,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById("root")
 );
 

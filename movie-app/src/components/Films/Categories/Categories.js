@@ -24,8 +24,6 @@ const Categories = (props) => {
         spaceBetween={window.matchMedia("(min-width: 600px)").matches ? 90 : 0}
         slidesPerView={window.matchMedia("(min-width: 600px)").matches ? 5 : 2}
         navigation
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log("slide change")}
       >
         {props.films.data.map((item, index) => {
           return (
